@@ -37,7 +37,7 @@
                                                 <a href="{{ route('admin/blogs/edit', $item->id) }}" class="btn btn-primary">O`zgartirish</a>
                                                 <form action="{{ route('admin/blogs/destroy', $item->id) }}" method="POST">
                                                     @csrf @method('DELETE')
-                                                    <button class="btn btn-danger">O`chirish</button>
+                                                    <button class="btn btn-danger" onclick="return confirm('Aniq o`chirilsinmi?')">O`chirish</button>
                                                 </form>
                                             </div>
                                         </td>

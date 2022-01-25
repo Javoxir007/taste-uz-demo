@@ -35,7 +35,7 @@
                                             <div class="d-flex justify-content-around">
                                                 <form action="{{ route('admin/place/destroy', $item->id) }}" method="POST">
                                                     @csrf @method('DELETE')
-                                                    <button class="btn btn-danger">O`chirish</button>
+                                                    <button class="btn btn-danger" onclick="return confirm('Aniq o`chirilsinmi?')">O`chirish</button>
                                                 </form>
                                             </div>
                                         </td>
