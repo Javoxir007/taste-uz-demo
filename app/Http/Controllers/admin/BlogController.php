@@ -14,7 +14,7 @@ class BlogController extends Controller
     {
         //$blog = DB::table('blogs')->get();
 
-        $blog = Blog::paginate(4);
+        $blog = Blog::orderBy('id', 'desc')->paginate(4);
         return view('admin/blogs/index', compact('blog'));
     }
 

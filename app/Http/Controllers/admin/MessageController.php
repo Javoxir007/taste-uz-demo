@@ -11,7 +11,7 @@ class MessageController extends Controller
     
     public function index()
     {
-        $messages = Message::paginate(4);
+        $messages = Message::orderBy('id', 'desc')->paginate(4);
         return view('admin/xabar/index', compact('messages'));
     }
 

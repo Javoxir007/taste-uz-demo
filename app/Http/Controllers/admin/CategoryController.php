@@ -20,7 +20,7 @@ class CategoryController extends Controller
        //$categories = DB::table('categories')->orderBy('id', 'DESC')->get();
 
        //2-nchi usul
-       $categories = Category::with(['food:id,nomi,categoriy_id'])->paginate(4);
+       $categories = Category::with(['food:id,nomi,categoriy_id'])->orderBy('id', 'desc')->paginate(4);
        //dd($categories); 
        return view('admin/category/index', compact('categories'));
     }

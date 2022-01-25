@@ -15,7 +15,7 @@ class FoodController extends Controller
     {
         //$foods = DB::table('food')->get();
 
-        $foods = Food::with(['category:id,name'])->paginate(4);
+        $foods = Food::with(['category:id,name'])->orderBy('id', 'desc')->paginate(4);
        return view('admin/food/index', compact('foods'));
     }
 

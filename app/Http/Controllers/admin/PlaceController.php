@@ -11,7 +11,7 @@ class PlaceController extends Controller
     
     public function index()
     {
-        $guests = Place::paginate(4);
+        $guests = Place::orderBy('id', 'desc')->paginate(4);
         return view('admin/place/index', compact('guests'));
     }
 

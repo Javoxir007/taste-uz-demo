@@ -14,7 +14,7 @@ class ChefController extends Controller
     {
         //$chefs = DB::table('chefs')->get();
 
-        $chefs = Chef::paginate(4);
+        $chefs = Chef::orderBy('id', 'desc')->paginate(4);
        return view('admin/chefs/index', compact('chefs'));
     }
 
