@@ -14,5 +14,5 @@
     <a href="{{ route('admin/xabar/index') }}" class="btn btn-light">Xabarlar</a>
 </li>
 <li class="px-3 p-1">
-    <a href="{{ route('admin/place/index') }}" class="btn btn-light">Joylar</a>
+    <a href="{{ route('admin/place/index') }}" class="btn btn-light">Buyurtmalar</a>
 </li>

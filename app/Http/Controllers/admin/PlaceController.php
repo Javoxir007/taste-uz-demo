@@ -29,7 +29,7 @@ class PlaceController extends Controller
 
         $created = Place::create($guestValidateData);
         if($created){
-            return redirect()->back();
+            return redirect()->back()->with(['success' => 'Xabar jo`natildi']);
         }
         return redirect()->back();
     }

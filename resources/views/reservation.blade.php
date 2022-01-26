@@ -18,6 +18,7 @@
    </div>
 </section>
 <section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
+    @include('includes/messages')
    <div class="container">
       <div class="row no-gutters">
          <div class="col-sm-12 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">

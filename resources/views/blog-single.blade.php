@@ -21,8 +21,8 @@
    <div class="container">
       <div class="row">
          <div class="col-lg-8 ftco-animate">
-            <h2 class="mb-3">#1. Creative WordPress Themes</h2>
-            <p>Temporibus ad error suscipit exercitationem hic molestiae totam obcaecati rerum, eius aut, in. Exercitationem atque quidem tempora maiores ex architecto voluptatum aut officia doloremque. Error dolore voluptas, omnis molestias odio dignissimos culpa ex earum nisi consequatur quos odit quasi repellat qui officiis reiciendis incidunt hic non? Debitis commodi aut, adipisci.</p>
+            <h2 class="mb-3">{{ $blogId->author }}</h2>
+            <p>{{ $blogId->short }}</p>
             <p>
                <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-pagespeed-no-defer>//<![CDATA[
                   (function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}
@@ -37,7 +37,7 @@
                   
                   pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://preview.colorlib.com/theme/tasteit/blog-single.html','-ilGEe-FWC',true,false,'v-Gnapmz4JQ');
                   //]]>
-               </script><img src="images/ximage_2.jpg.pagespeed.ic.U00YIrUTVw.jpg" alt="" class="img-fluid" data-pagespeed-url-hash="3014300006" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+               </script><img src="{{ $blogId->image }}" alt="" class="img-fluid" data-pagespeed-url-hash="3014300006" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
             </p>
             <p>Quisquam esse aliquam fuga distinctio, quidem delectus veritatis reiciendis. Nihil explicabo quod, est eos ipsum. Unde aut non tenetur tempore, nisi culpa voluptate maiores officiis quis vel ab consectetur suscipit veritatis nulla quos quia aspernatur perferendis, libero sint. Error, velit, porro. Deserunt minus, quibusdam iste enim veniam, modi rem maiores.</p>
             <p>Odit voluptatibus, eveniet vel nihil cum ullam dolores laborum, quo velit commodi rerum eum quidem pariatur! Quia fuga iste tenetur, ipsa vel nisi in dolorum consequatur, veritatis porro explicabo soluta commodi libero voluptatem similique id quidem? Blanditiis voluptates aperiam non magni. Reprehenderit nobis odit inventore, quia laboriosam harum excepturi ea.</p>

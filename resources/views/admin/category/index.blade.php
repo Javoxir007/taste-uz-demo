@@ -29,9 +29,7 @@
                                         <td>{{ $item->niceName() }}</td>
                                         <td>{{ $item->description }}</td>
                                         <th>
-                                            @foreach($item->food as $food)
-                                                {{ $food->nomi }} </br>
-                                            @endforeach
+                                            <a href="{{ route('admin/categories/fullFood', $item->id) }}" class="btn btn-success">Batafsil</a>
                                         </th>
                                         <td>
                                             <div class="d-flex justify-content-around">

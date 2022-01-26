@@ -19,16 +19,10 @@
     </section>
     <section class="ftco-section">
         <div class="container">
-        <h2 class="mb-4 text-center">Kategoriyani tanlang va taomlarni ko`ring</h2>
             <div class="row justify-content-center mb-5 pb-2">
-                <form class="d-flex">
+                <form class="d-flex"> 
                     <div class="form-group mr-2">
-                        <select class="form-control" name="category_id">
-                        <option>Kategoriyani tanlang</option>
-                            @foreach($categories as $cat)
-                                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-                            @endforeach
-                        </select>
+                        <input type="text" class="form-control" placeholder="Taom nomi" name="name">
                     </div>
                     <div class="form-group mr-2">
                         <a href="/fullMenu" class="btn btn-primary mb-2" style="height: 100%; background: #008000 !important; border: #008000 !important; color: white !important; padding-top: 20% !important;">Izlash</a>
@@ -36,33 +30,32 @@
                 </form>
             </div>
             <div class="row justify-content-center mb-5 pb-2">
-                <div class="col-md-7 text-center heading-section ftco-animate"> <span class="subheading">Specialties</span>
-                    <h2 class="mb-4">Our Menu</h2> 
+                <div class="col-md-7 text-center heading-section ftco-animate">
+                @forelse($categories as $category)
+                    <h2 class="mb-4">{{ $category->name }}</h2>
+                @empty
+
+                @endforelse
                 </div>
             </div>
             <div class="row">
                 @forelse($categories as $category)
-                    <div class="col-md-6 col-lg-4">
-                        <div class="menu-wrap">
-                            <div class="heading-menu text-center ftco-animate">
-                                <h3>{{ $category->id. ". ".$category->name }}</h3>
-                            </div>
-                            @forelse($foods->where('categoriy_id', $category->id)->take(5) as $food)
-                                <div class="menus d-flex ftco-animate">
-                                    <div class="menu-img img" style="background-image:url({{ $food->image }})"></div>
-                                    <div class="text">
-                                        <div class="d-flex">
-                                            <div class="one-half">
-                                                <h3>{{ $food->nomi }}</h3> </div>
-                                            <div class="one-forth"> <span class="price">$ {{ $food->narxi }}</span> </div>
-                                        </div>
-                                        <p><span>{{ $food->retsept }}</span></p>
-                                    </div>
+                    <div class="d-flex w-100" style="flex-wrap: wrap !important; justify-content: space-between !important;">
+                    @forelse($foods->where('categoriy_id', $category->id) as $food)
+                        <div class="menus d-flex ftco-animate" style="width: 31.3% !important;">
+                            <div class="menu-img img" style="background-image:url({{ $food->image }})"></div>
+                            <div class="text">
+                                <div class="d-flex">
+                                    <div class="one-half">
+                                        <h3>Салом</h3> </div>
+                                    <div class="one-forth"> <span class="price">$ 15</span> </div>
                                 </div>
-                            @empty
-                                <div>Taomlar hali kiritilmadi</div>
-                            @endforelse
-                        </div>
+                                <p><span>Гашир, сабши, картшка</span></p>
+                            </div>
+                        </div>   
+                    @empty
+                        <div>Taomlar hali kiritilmadi</div>
+                    @endforelse                                     
                     </div>
                 @empty
                     <div>Menu tayyor emas</div>

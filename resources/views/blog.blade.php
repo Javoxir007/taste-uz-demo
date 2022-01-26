@@ -32,7 +32,7 @@
                      </div>
                      <h3 class="heading"><a href="blog.html#">{{ $blog->short }}</a></h3>
                      <p class="clearfix">
-                        <a href="/blog_single" class="float-left read btn btn-primary">Read more</a>
+                        <a href="{{ route('blog_single', $blog->id) }}" class="float-left read btn btn-primary">Read more</a>
                         <a href="blog.html#" class="float-right meta-chat"><span class="fa fa-comment"></span> 3</a>
                      </p>
                   </div>

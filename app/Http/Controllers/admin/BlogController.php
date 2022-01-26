@@ -94,4 +94,10 @@ class BlogController extends Controller
         return redirect()->route('admin/blogs/index')->with(['success' => 'O`chirildi']);
     }
 
+    public function blogId($id)
+    {
+        $blogId = Blog::findOrFail($id);
+        return view('blog-single', compact('blogId'));
+    }
+
 }

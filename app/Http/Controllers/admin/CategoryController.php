@@ -97,4 +97,11 @@ class CategoryController extends Controller
 
     }
 
+    public function fullFood($id)
+    {
+        $categories = $this->index()->categories;
+        $item = Category::findOrFail($id);
+        return view('admin/category/fullFood', compact('item','categories'));
+    }
+
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Category;
 use App\Models\Food;
 use App\Models\Chef;
 use App\Models\Blog;
@@ -22,7 +23,7 @@ class PageController extends Controller
 
     public function blog()
     {
-        $blogs = Blog::select(['image','date','author','short'])->paginate(3);
+        $blogs = Blog::select(['id','image','date','author','short'])->paginate(3);
         return view('blog', compact('blogs'));
     }
 
@@ -79,6 +80,16 @@ class PageController extends Controller
     public function reservation()
     {
         return view('reservation');
+    }
+
+    public function fullMenu(Request $request)
+    {
+        $categories = $this->getCategories();
+        $foods = Food::select(['id','categoriy_id','nomi','image','retsept','narxi'])
+            ->filter($request)
+            ->get();
+
+        return view('fullMenu', compact('categories','foods'));
     }
 
     private function getAllChefs()

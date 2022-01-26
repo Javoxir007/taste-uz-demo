@@ -30,6 +30,7 @@ Route::get('chef', [PageController::class, 'chef']);
 Route::get('contact', [PageController::class, 'contact']);
 Route::get('/menu', [PageController::class, 'menu']);
 Route::get('reservation', [PageController::class, 'reservation']);
+Route::get('fullMenu', [PageController::class, 'fullMenu']);
 
 //POST zaprosni turlari
 //1.Agar ma`lumotni o`zgartirish garak bo`lsa: 
@@ -56,6 +57,9 @@ Route::patch('admin/categories/{id}', [CategoryController::class, 'update'])
     ->middleware('auth');
 Route::delete('admin/categories/{id}', [CategoryController::class, 'destroy'])
     ->name('admin/categories/destroy')
+    ->middleware('auth');
+Route::get('admin/categories/{id}/fullFood', [CategoryController::class, 'fullFood'])
+    ->name('admin/categories/fullFood')
     ->middleware('auth');
 
 
@@ -123,6 +127,8 @@ Route::patch('admin/blogs/{id}', [BlogController::class, 'update'])
 Route::delete('admin/blogs/{id}', [BlogController::class, 'destroy'])
     ->name('admin/blogs/destroy')
     ->middleware('auth');
+Route::get('blog_single/{id}', [BlogController::class, 'blogId'])
+    ->name('blog_single');
 
 
 /* Хабарлар */

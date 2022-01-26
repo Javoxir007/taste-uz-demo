@@ -35,9 +35,9 @@ class MessageController extends Controller
         $created = Message::create($messageValidateData );
 
         if($created){
-            return redirect()->back();
+            return redirect()->back()->with(['success' => 'Xabar jo`natildi']);
         }
-        return redirect()->back();
+        return redirect()->back()->withErrors(['msg' => 'Xatoli, xabar jo`natilmadi']);
     }
 
 
