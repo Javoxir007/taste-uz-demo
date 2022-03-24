@@ -33,5 +33,6 @@ class Food extends Model
             $query->where('nomi', 'like', "%$search%");
         }
     }
+    
 
 }
